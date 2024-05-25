@@ -69,11 +69,21 @@ int main() {
     std::vector<int> originalSequence = sequence;
 
     if (isGraphicalSequence(sequence)) {
-        std::cout << "此序列是图序列。" << std::endl;
+        std::cout << '{' << sequence[0];
+        for(int i = 1; i < sequence.size(); i++){
+            std::cout << ',' << sequence[i];
+        }
+        std::cout << '}';
+        std::cout << "是图序列。" << std::endl;
         std::vector<std::vector<int>> adjMatrix = generateAdjacencyMatrix(sequence);
         printAdjacencyMatrix(adjMatrix);
     } else {
-        std::cout << "此序列不是图序列。" << std::endl;
+        std::cout << '{' << sequence[0];
+        for(int i = 1; i < sequence.size(); i++){
+            std::cout << ',' << sequence[i];
+        }
+        std::cout << '}';
+        std::cout << "不是图序列。" << std::endl;
     }
 
     return 0;
